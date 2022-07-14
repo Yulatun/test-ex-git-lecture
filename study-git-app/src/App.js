@@ -1,15 +1,14 @@
 import { useState } from "react";
 import "./App.css";
-import { Category } from "./svg/category";
+import { Category} from "./components"
 
-import { useState } from 'react';
+
 import './App.css';
 
 import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
   const [currentCategory, setCurrentCategory] = useState("testcategory");
-
 
   return (
     <ChakraProvider>
@@ -32,3 +31,8 @@ function App() {
 }
 
 export default App;
+ 
+
+
+  
+
