@@ -1,24 +1,33 @@
+import { useState } from "react";
+import "./App.css";
+import { Category } from "./svg/category";
 
 import { useState } from 'react';
 import './App.css';
 
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
+  const [currentCategory, setCurrentCategory] = useState("testcategory");
 
-  const [count, setCount] = useState(0);
-  
+
   return (
-    <div className="App">
-      <header className="App-header">
-       
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            User number: {count}
+    <ChakraProvider>
+      <div className="App">
+        <header className="App-header">
+          <button
+            type="button"
            
+          >
+            Chosen category is {currentCategory}
           </button>
-        </p>
-      </header>
-    </div>
+          <Category
+            currentCategory={currentCategory}
+            onCurrentCategoryChange={(a)=>setCurrentCategory(a)}
+          />
+        </header>
+      </div>
+    </ChakraProvider>
   );
 }
 
